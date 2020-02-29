@@ -1,13 +1,14 @@
 The project is a simple program that listing organic fruits by category.
 
-##Flows:
-###Step #1: 
+## Flows:
+
+### Step #1: 
 - Fetch product data provided by mock data (products.json)
 - From the products collect product item by ingredients id from ingredients.json.
 Use case:
 - Open program on a browser you will see the loading page.
 - When the loading products is completed, you will see a list of item.
-###Step #2:
+### Step #2:
 - Group product of category from the product data (products.json)
 - Search product item by name, collection (TODO)
 Use case:
@@ -15,17 +16,17 @@ Use case:
 - The user can find any product by typing on the search box (TODO).
 
 
-##Setup & Run program
+## Setup & Run program
 
-##Web App - Build steps:
+## Web App - Build steps:
 - React: V16
 - Type: React-Typescript 
 - Template: typescript package 
 
-##Node & NPM
+## Node & NPM
 Based on the provision above
 
-##Install & Build Script
+## Install & Build Script
 
 # Install Node packages
 `npm install / yarn add`
