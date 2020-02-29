@@ -31,7 +31,7 @@ Based on the provision above
 # Install Node packages
 `npm install / yarn add`
 
-# Build Customizing Variables For Each Environment
+## Build Customizing Variables For Each Environment
 ### Development
 `npm run build:dev`
 
