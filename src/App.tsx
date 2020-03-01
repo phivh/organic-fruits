@@ -17,6 +17,8 @@ const INIT_STATE = {
   errors: undefined
 }
 
+const ORGANIC_BANANA = 'Organic Banana'
+
 class App extends React.Component<Props> { 
   state: any = {}
   constructor(props: Props) {
@@ -44,12 +46,16 @@ class App extends React.Component<Props> {
   renderProducts = (ingredient_ids:any) => { 
       const { ingredientsData } = this.state
       let ingredients:any =  []
-      ingredientsData.ingredients.some( (item:any) => {
-        if(ingredient_ids.indexOf(item.id) > -1) {
+      let isOwnBanana = ingredientsData.ingredients.map( (item:any) => {
+        let isBanana = ingredient_ids.indexOf(item.id) > -1 && item.name === ORGANIC_BANANA;
+        if( isBanana ) {
           ingredients.push(this.ingredient(item))
         }
-        return false;
+        return isBanana;
       })
+      // Check if the ingredient doesn't own any banana then return default content
+      let isEmptyProduct = (isOwnBanana.filter((item:boolean) => item === true) )
+      if( isEmptyProduct.toString() === "" ) ingredients.push(<div key={Math.random()}>This category doesn't have any "Organic Banana" product.</div>)
       return ingredients
   }
 
@@ -76,7 +82,8 @@ class App extends React.Component<Props> {
                 <div key={item.id}>
                   <Category title={item.name} collection={item.collection} />
                   <ProductList>
-                    {this.renderProducts(item.ingredient_ids)} 
+                    {this.renderProducts(item.ingredient_ids)}
+                     
                   </ProductList>
                 </div>
               ))

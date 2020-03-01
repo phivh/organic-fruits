@@ -12,7 +12,7 @@ const Item = styled.div`
     figure {
         border:1px solid #ccc;
         padding: 10px;
-        width: 90%;
+        width: 25%;
         margin: 0;
     }
     h3 {
